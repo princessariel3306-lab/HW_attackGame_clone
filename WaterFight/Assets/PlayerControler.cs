@@ -8,8 +8,7 @@ public class PlayerControler : MonoBehaviour
     private float xVelocity;
     private float yVelocity;
      public Rigidbody2D rb;
-    public Camera cam;
- 
+    
 
 
     // Start is called before the first frame update
@@ -21,8 +20,7 @@ public class PlayerControler : MonoBehaviour
         var xPos = gameObject.transform.position.x;
         var yPos = gameObject.transform.position.y;
         //OpenDoor(); // calls open door 
-        cam.gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -10); //make the camra fallow the player 
-
+       
         if (Input.GetKey(KeyCode.W)) // it makes the player go up
         {
             yVelocity += Time.deltaTime * movespeed;
@@ -51,15 +49,6 @@ public class PlayerControler : MonoBehaviour
         //gameObject.transform.position = new Vector2(xPos, yPos);
         Debug.Log("Update.");
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.name == "player" || collision.gameObject.name == "player")// if touch it will go away 
-        {
-
-            Destroy(collision.gameObject);
-
-        }
-
-    }
+    
 
 }

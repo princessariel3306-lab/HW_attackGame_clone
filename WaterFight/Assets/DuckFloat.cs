@@ -1,0 +1,50 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DuckFloat : MonoBehaviour
+{
+    private float movespeed = 5;
+    private float xVelocity;
+    private float yVelocity;
+    public Rigidbody2D rb;
+ 
+   
+   
+
+    // Update is called once per frame
+    void Update()
+    {
+        var xPos = gameObject.transform.position.x;
+        var yPos = gameObject.transform.position.y;
+        //OpenDoor(); // calls open door 
+
+        if (Input.GetKey(KeyCode.UpArrow)) // it makes the player go up
+        {
+            yVelocity += Time.deltaTime * movespeed;
+
+        }
+
+        else if (Input.GetKey(KeyCode.DownArrow)) // makr the playert go down
+        {
+            yVelocity -= Time.deltaTime * movespeed;
+        }
+        else { yVelocity = 0; }
+        if (Input.GetKey(KeyCode.RightArrow)) // make the player go right 
+        {
+            xVelocity += Time.deltaTime * movespeed;
+        }
+
+        else if (Input.GetKey(KeyCode.LeftArrow)) // make the player left
+        {
+            xVelocity -= Time.deltaTime * movespeed;
+        }
+        else { xVelocity = 0; }
+
+        xPos = xVelocity;
+        yPos = yVelocity;
+        rb.velocity = new Vector2(xPos, yPos);
+        //gameObject.transform.position = new Vector2(xPos, yPos);
+        Debug.Log("Update.");
+    }
+}
