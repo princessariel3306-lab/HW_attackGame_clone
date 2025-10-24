@@ -19,23 +19,23 @@ public class DuckFloat : MonoBehaviour
         var yPos = gameObject.transform.position.y;
         //OpenDoor(); // calls open door 
 
-        if (Input.GetKey(KeyCode.UpArrow)) // it makes the player go up
+        if (Input.GetKey(KeyCode.W)) // it makes the player go up
         {
             yVelocity += Time.deltaTime * movespeed;
 
         }
 
-        else if (Input.GetKey(KeyCode.DownArrow)) // makr the playert go down
+        else if (Input.GetKey(KeyCode.S)) // makr the playert go down
         {
             yVelocity -= Time.deltaTime * movespeed;
         }
         else { yVelocity = 0; }
-        if (Input.GetKey(KeyCode.RightArrow)) // make the player go right 
+        if (Input.GetKey(KeyCode.A)) // make the player go right 
         {
             xVelocity += Time.deltaTime * movespeed;
         }
 
-        else if (Input.GetKey(KeyCode.LeftArrow)) // make the player left
+        else if (Input.GetKey(KeyCode.D)) // make the player left
         {
             xVelocity -= Time.deltaTime * movespeed;
         }
