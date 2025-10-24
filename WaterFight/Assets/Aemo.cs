@@ -32,12 +32,14 @@ public class Aemo : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "enmey" || collision.gameObject.name == "Target(Clone)")// if touch it will go away 
+        // if our object name contanes enemy 
+        // string.contains allows us to see if a sting has a particuler phrase with in it 
+        if (collision.gameObject.name.Contains("enemy"))  
         {
-            
+            //distroys the game objects 
             Destroy(collision.gameObject);
           
         }
-
+      /*  Debug.Log("bang");*/
     }
 }

@@ -47,7 +47,7 @@ public class PlayerControler : MonoBehaviour
         yPos = yVelocity;
         rb.velocity = new Vector2(xPos, yPos);
         //gameObject.transform.position = new Vector2(xPos, yPos);
-        Debug.Log("Update.");
+      /*  Debug.Log("Update.");*/
     }
     
 
