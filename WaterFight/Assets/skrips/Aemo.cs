@@ -38,7 +38,8 @@ public class Aemo : MonoBehaviour
         {
             //distroys the game objects 
             Destroy(collision.gameObject);
-          
+            scoreManager.instance.UpdateScore();
+
         }
       /*  Debug.Log("bang");*/
     }
